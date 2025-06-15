@@ -152,6 +152,27 @@ h2 {
     100% { transform: scale(1); }
 }
 
+.time-message {
+    font-size: 1.5em;
+    color: #ff69b4;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
