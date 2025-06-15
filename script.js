@@ -101,4 +101,34 @@ document.addEventListener('DOMContentLoaded', () => {
             photoFrame.style.opacity = '1';
         }, 500);
     }, 3000);
+
+    function getTimeBasedMessage() {
+        const hour = new Date().getHours();
+        let message = '';
+
+        if (hour >= 20 && hour < 22) {
+            message = 'İyi akşamlar bitanemm';
+        } else if (hour >= 22 || hour < 4) {
+            message = 'İyi geceler bitanemm seni çok seviyorum öpüyorum seni bal dudaklarından';
+        } else if (hour >= 4 && hour < 12) {
+            message = 'Günaydınnn yavrumm';
+        } else if (hour >= 12 && hour < 18) {
+            message = 'İyi günler aşkbahcemmm';
+        } else if (hour >= 18 && hour < 20) {
+            message = 'Napıyosun askimmmmm';
+        }
+
+        return message;
+    }
+
+    function updateTimeBasedMessage() {
+        const messageElement = document.querySelector('.time-message');
+        if (messageElement) {
+            messageElement.textContent = getTimeBasedMessage();
+        }
+    }
+
+    // Sayfa yüklendiğinde ve her dakika güncelle
+    updateTimeBasedMessage();
+    setInterval(updateTimeBasedMessage, 60000); // Her dakika güncelle
 }); 
